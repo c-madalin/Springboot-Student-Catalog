@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionare Studenți</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+<header class="header">
+
+    <nav class="navbar">
+        <a th:href="@{/}" class="nav-link">Acasă</a>
+        <a th:href="@{/students}" class="nav-link">Vezi Studenți</a>
+        <a th:href="@{/students/add}" class="nav-link">Adaugă Student</a>
+    </nav>
+    <h1>Gestionare Studenți</h1>
+</header>
+
+<main class="content">
+    <h2>Bine ai venit!</h2>
+    <p>Aceasta este platforma de gestionare a studenților. Administrează datele ușor și eficient.</p>
+    <a th:href="@{/students/add}" class="btn">Adaugă un student</a>
+    <a th:href="@{/students}" class="btn">Vezi Lista de Studenti</a>
+</main>
+
+<footer class="footer">
+    <p>© 2025 Gestionare Studenți. Toate drepturile rezervate. </p></br>
+    </p> Cazan Madalin</p>
+</footer>
+</body>
+</html>

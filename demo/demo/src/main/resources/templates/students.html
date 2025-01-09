@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Studenți</title>
+    <link rel="stylesheet" href="/list.css">
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <a th:href="@{/}" class="nav-link">Acasă</a>
+        <a th:href="@{/students}" class="nav-link">Vezi Studenți</a>
+        <a th:href="@{/students/add}" class="nav-link">Adaugă Student</a>
+    </nav>
+    <h1>Lista Studenti</h1>
+</header>
+<div class="content">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nume</th>
+            <th>Email</th>
+            <th>Acțiuni</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.email}"></td>
+            <td>
+                <a th:href="@{/students/delete/{id}(id=${student.id})}" class="btn">Șterge</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer class="footer">
+    <p>© 2025 Gestionare Studenți. Toate drepturile rezervate.</p>
+    <p>Cazan Madalin</p>
+</footer>
+</body>
+</html>

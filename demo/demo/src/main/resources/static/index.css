@@ -1,0 +1,92 @@
+/* Reset styles */
+body, h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: left;
+    padding: 10px 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px; /* Mai mult spațiu între linkuri */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Tranziție lină la hover */
+}
+
+.nav-link:hover {
+    color: #4CAF50; /* Culoare de hover verde */
+    text-decoration: underline;
+}
+
+/* Mobile view - navbar stack */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Se aliniază pe verticală pe ecranele mai mici */
+    }
+
+    .nav-link {
+        margin: 10px 0; /* Mai mult spațiu între linkuri pe mobil */
+    }
+}
+
+/* Main content styles */
+.content {
+    flex: 1; /* This will make the content area grow and take up remaining space */
+    padding: 20px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

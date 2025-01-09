@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaugă Student</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+<header class="header">
+
+    <nav class="navbar">
+        <a th:href="@{/}" class="nav-link">Acasă</a>
+        <a th:href="@{/students}" class="nav-link">Vezi Studenți</a>
+        <a th:href="@{/students/add}" class="nav-link">Adaugă Student</a>
+    </nav>
+    <h1>Adaugă Student</h1>
+</header>
+
+<div class="content">
+    <form th:action="@{/students/add}" th:object="${student}" method="post" class="registration-form">
+        <label for="name" class="form-label">Nume:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required class="form-control">
+        <br>
+
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" th:field="*{email}" required class="form-control">
+        <br>
+
+        <label for="dob" class="form-label">Data Nașterii:</label>
+        <input type="date" id="dob" name="dob" th:field="*{dob}" required class="form-control">
+        <br>
+
+        <button type="submit" class="btn">Salvează</button>
+    </form>
+
+    <a href="/students" class="btn">Înapoi la listă</a>
+</div>
+
+<footer class="footer">
+    <p>© 2025 Gestionare Studenți. Toate drepturile rezervate.</p>
+    <p>Cazan Madalin</p>
+</footer>
+</body>
+</html>
