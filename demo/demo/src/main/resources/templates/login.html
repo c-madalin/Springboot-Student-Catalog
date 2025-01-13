@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In / Sign Up</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <a th:href="@{/}" class="nav-link">Acasă</a>
+        <a th:href="@{/students}" class="nav-link">Vezi Studenți</a>
+        <a th:href="@{/students/add}" class="nav-link">Adaugă Student</a>
+        <a th:href="@{/students/login}" class="nav-link">Log In</a>
+    </nav>
+    <h1>Log In / Sign Up</h1>
+</header>
+
+<main class="content">
+    <h2>Autentificare sau Înregistrare</h2>
+
+    <!-- Form pentru Log In -->
+    <form action="/students/login" method="post" class="login-form">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" required class="form-input">
+
+        <button type="submit" class="btn">Log In</button>
+    </form>
+
+    <!-- Buton separat pentru Sign Up -->
+    <div class="signup-section">
+        <p>Nu ai cont? Înregistrează-te acum:</p>
+        <a th:href="@{/students/add}" class="btn">Sign Up</a>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>© 2025 Gestionare Studenți. Toate drepturile rezervate.</p>
+    <p>Cazan Madalin</p>
+</footer>
+</body>
+</html>

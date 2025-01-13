@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.Optional;
+
 @Controller
 public class WebController {
 
@@ -17,7 +20,7 @@ public class WebController {
 
     @GetMapping("/")
     public String index() {
-        return "index"; // Returnează pagina index.html
+        return "index"; // Returnează pagina principală (index.html)
     }
 
     @GetMapping("/students")
@@ -41,6 +44,33 @@ public class WebController {
     @GetMapping("/students/delete/{id}")
     public String deleteStudent(@PathVariable("id") Long id) {
         studentService.deleteStudent(id);
+        return "redirect:/students"; // Redirecționează către lista de studenți
+    }
+
+    @GetMapping("/students/login")
+    public String loginForm(Model model) {
+        model.addAttribute("message", "Introduceți email-ul pentru a vă autentifica sau pentru a vă înregistra.");
+        return "login"; // Returnează pagina login.html
+    }
+
+    @PostMapping("/students/login")
+    public String loginOrSignUpStudent(@RequestParam String email,
+                                       @RequestParam(required = false) String name,
+                                       Model model) {
+        Optional<Student> existingStudent = studentService.findStudentByEmail(email);
+
+        if (existingStudent.isPresent()) {
+            model.addAttribute("message", "Bun venit înapoi, " + existingStudent.get().getName() + "!");
+            return "students"; // Returnează lista de studenți
+        } else {
+            if (name == null || name.isEmpty()) {
+                model.addAttribute("message", "Nu există un student cu acest email. Te rugăm să completezi numele pentru a te înregistra.");
+                return "login"; // Revino la pagina de login pentru completarea numelui
+            }
+            Student newStudent = new Student(name, email, LocalDate.now()); // Data nașterii poate fi setată implicit
+            studentService.addNewStudent(newStudent);
+            model.addAttribute("message", "Studentul a fost înregistrat cu succes!");
+        }
         return "redirect:/students"; // Redirecționează către lista de studenți
     }
 }

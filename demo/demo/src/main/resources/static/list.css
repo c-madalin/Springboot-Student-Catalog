@@ -19,12 +19,12 @@ body {
     flex-direction: column;
 }
 
+/* Header styles */
 .header {
     background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
+    padding: 1rem 0;
 }
 
 h1 {
@@ -32,28 +32,25 @@ h1 {
 }
 
 /* Navbar styles */
-/* Navbar styles */
 .navbar {
     background-color: #333;
     display: flex;
-    justify-content: left;
-    padding: 10px 0;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .nav-link {
     color: white;
     text-decoration: none;
-    margin: 0 20px; /* Mai mult spațiu între linkuri */
+    margin: 0 20px;
     font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s ease; /* Tranziție lină la hover */
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #4CAF50; /* Culoare de hover verde */
+    color: #4CAF50; /* Green on hover */
     text-decoration: underline;
 }
-
 
 /* Table styles */
 .content {

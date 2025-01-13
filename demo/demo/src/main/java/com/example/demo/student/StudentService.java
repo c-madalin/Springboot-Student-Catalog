@@ -59,4 +59,9 @@ public class StudentService {
         student.setEmail(email);
         }
     }
+
+    public Optional<Student> findStudentByEmail(String email) {
+        return studentRepository.findByEmail(email);
+    }
+
 }
