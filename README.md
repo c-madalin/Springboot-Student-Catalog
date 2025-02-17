@@ -3,8 +3,10 @@
 <br>
 <p>La acest moment aplicatia are 3 pagini</p>
 <p>Pagina principala</p>
+
 ![image](https://github.com/user-attachments/assets/1ebbaef1-e3d0-4605-8fb8-cc115cdac5e3)
 <p>Lista sudentilor</p>
+
 ![image](https://github.com/user-attachments/assets/c84c7c1e-c865-48bb-ad8f-e8578e7c94e8)
 <p>Adaugare studenti</p>
 
