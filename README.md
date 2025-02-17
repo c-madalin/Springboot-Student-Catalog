@@ -1,5 +1,4 @@
-![image](https://github.com/user-attachments/assets/e32b6ec4-2e73-41e2-a741-5c31512e8c58)
-<h1>Un mic proiect ce are ca scop mentinerea evidentei studentilor dintro facultate </h1>
+<h1>Un mic proiect ce are ca scop mentinerea evidentei studentilor dintr-o facultate </h1>
 <h2> Acest Proiect este facut Java folosind framework ul Spring-Boot ,foloseste o baza de date PostgreSQL iar interfata grafica a fost realizata folosind Thymeleaf + HTML/CSS  </h2>
 <br>
 <p>La acest moment aplicatia are 3 pagini</p>
